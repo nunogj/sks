@@ -1281,5 +1281,19 @@
   })();
 </script>
 
+<script>
+  // Auto-height resizing: notify parent iframe of document height
+  function sendHeight() {
+    var height = document.documentElement.scrollHeight || document.body.scrollHeight;
+    window.parent.postMessage({ type: 'iframeHeight', height: height }, '*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  // Also observe DOM mutations (e.g. accordions, lazy content)
+  if (window.MutationObserver) {
+    new MutationObserver(sendHeight).observe(document.body, { childList: true, subtree: true, attributes: true });
+  }
+</script>
+
 </body>
 </html>
