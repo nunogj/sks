@@ -846,7 +846,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-brand" href="#">
+  <a class="nav-brand" href="https://www.myconsciousconnection.com/" target="_top">
     <span class="nav-script">Conscious Connection</span>
     <span class="nav-sub">Practice</span>
   </a>
@@ -1232,7 +1232,7 @@
   <p>
     Keren Stein, LCSW · Licensed in New Jersey, New York &amp; Connecticut<br/>
     myconsciousconnection.com · (973) 436-5817<br/>
-    &copy; 2026 Conscious Connection Practice · <a href="#">Privacy Policy</a>
+    &copy; 2026 Conscious Connection Practice · <a href="https://www.myconsciousconnection.com/privacy-policy-disclaimer" target="_top">Privacy Policy</a>
   </p>
 </footer>
 
@@ -1282,14 +1282,13 @@
 </script>
 
 <script>
-  // Auto-height resizing: notify parent iframe of document height
+  // ── Auto-height resizing: notify parent iframe of document height ──
   function sendHeight() {
     var height = document.documentElement.scrollHeight || document.body.scrollHeight;
     window.parent.postMessage({ type: 'iframeHeight', height: height }, '*');
   }
   window.addEventListener('load', sendHeight);
   window.addEventListener('resize', sendHeight);
-  // Also observe DOM mutations (e.g. accordions, lazy content)
   if (window.MutationObserver) {
     new MutationObserver(sendHeight).observe(document.body, { childList: true, subtree: true, attributes: true });
   }
